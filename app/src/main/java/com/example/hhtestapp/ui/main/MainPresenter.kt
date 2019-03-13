@@ -1,4 +1,4 @@
-package com.example.hhtestapp.ui
+package com.example.hhtestapp.ui.main
 
 import com.example.hhtestapp.base.AbstractBasePresenter
 import com.example.hhtestapp.di.activity.ActivityScope
