@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">hhtestapp</string>
+    <string name="no_connection">Отсутствует интернет</string>
+    <string name="unknown_error">Непредвиденная ошибка</string>
+</resources>
