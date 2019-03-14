@@ -3,6 +3,7 @@ package com.example.hhtestapp.ui.auth
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.example.hhtestapp.R
@@ -47,6 +48,16 @@ class AuthActivity : AbstractBaseActivity<AuthView, AuthPresenter>(), AuthView {
     override fun showWeather(weather: Weather) {
         val text = String.format("%s: temperature %s °C, condition is %s",  weather.name, weather.temperatureC, weather.condition)
         Snackbar.make(this.window.decorView.findViewById(android.R.id.content), text, Snackbar.LENGTH_LONG).show()
+    }
+
+    override fun setProgressBar(flag: Boolean) {
+        if (flag) {
+            contentLayout.visibility = View.GONE
+            progressBarLayout.visibility = View.VISIBLE
+        } else {
+            contentLayout.visibility = View.VISIBLE
+            progressBarLayout.visibility = View.GONE
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

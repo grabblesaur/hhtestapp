@@ -7,4 +7,5 @@ interface AuthView : BaseView {
     fun refreshErrorState()
     fun onInputError(throwable: Throwable)
     fun showWeather(weather: Weather)
+    fun setProgressBar(flag: Boolean)
 }

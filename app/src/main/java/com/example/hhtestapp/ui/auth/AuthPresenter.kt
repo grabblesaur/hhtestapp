@@ -54,6 +54,7 @@ class AuthPresenter @Inject constructor(val authInteractor: AuthInteractor) : Ab
     }
 
     private fun loadWeather() {
+        getView()?.setProgressBar(true)
         authInteractor.loadWeather()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -64,9 +65,11 @@ class AuthPresenter @Inject constructor(val authInteractor: AuthInteractor) : Ab
                 }
                 override fun onSuccess(t: Weather) {
                     getView()?.showWeather(t)
+                    getView()?.setProgressBar(false)
                 }
                 override fun onError(e: Throwable) {
                     getView()?.onError(e)
+                    getView()?.setProgressBar(false)
                 }
             })
     }
