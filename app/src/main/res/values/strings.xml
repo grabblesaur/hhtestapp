@@ -2,4 +2,7 @@
     <string name="app_name">hhtestapp</string>
     <string name="no_connection">Отсутствует интернет</string>
     <string name="unknown_error">Непредвиденная ошибка</string>
+    <string name="email_hint">Электронная почта</string>
+    <string name="password_hint">Пароль</string>
+    <string name="sign_in">Войти</string>
 </resources>
