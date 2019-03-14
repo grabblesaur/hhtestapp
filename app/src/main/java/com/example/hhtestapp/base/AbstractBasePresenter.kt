@@ -108,8 +108,8 @@ abstract class AbstractBasePresenter<T : BaseView> : BasePresenter<T> {
         )
     }
 
-    fun disposeCheck(disposable: Disposable) {
-        if (!disposable.isDisposed)
+    fun disposeCheck(disposable: Disposable?) {
+        if (disposable != null && !disposable.isDisposed)
             disposable.dispose()
     }
 }

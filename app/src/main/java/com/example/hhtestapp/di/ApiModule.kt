@@ -24,7 +24,9 @@ class ApiModule {
         private const val READ_TIMEOUT = 20L
         private const val WRITE_TIMEOUT = 20L
 
-        const val DEFAULT_API_HOST = "https://dornet.ru/api_app/"
+        const val DEFAULT_API_HOST = "https://api.apixu.com/v1/"
+        // https://api.apixu.com/v1/current.json?key=871051d325b5431b8e181249191403&q=Paris
+        const val API_KEY = "871051d325b5431b8e181249191403"
     }
 
     @Provides
@@ -48,6 +50,13 @@ class ApiModule {
             .writeTimeout(WRITE_TIMEOUT, TimeUnit.SECONDS)
             .retryOnConnectionFailure(true)
             .addInterceptor(loggingInterceptor)
+//            .addInterceptor { chain ->
+//                val original = chain.request()
+//                val requestBuilder = original.newBuilder()
+//                    .header("Authorization", API_KEY)
+//                val request = requestBuilder.build()
+//                chain.proceed(request)
+//            }
         return okHttpClientBuilder
             .build()
     }

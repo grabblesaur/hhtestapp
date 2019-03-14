@@ -15,6 +15,9 @@ import dagger.android.support.HasSupportFragmentInjector
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 import java.util.concurrent.TimeoutException
+import android.content.Context
+import android.view.inputmethod.InputMethodManager
+
 
 abstract class AbstractBaseActivity<in V : BaseView, P : BasePresenter<V>> : AppCompatActivity(),
     HasSupportFragmentInjector, BaseView {
@@ -76,5 +79,12 @@ abstract class AbstractBaseActivity<in V : BaseView, P : BasePresenter<V>> : App
         supportActionBar?.setDisplayShowHomeEnabled(true)
         supportActionBar?.title = ""
         toolbar.setNavigationOnClickListener { v -> onBackPressed() }
+    }
+
+    fun hideSoftKeyBoard() {
+        val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        if (imm.isAcceptingText) { // verify if the soft keyboard is open
+            imm.hideSoftInputFromWindow(currentFocus!!.windowToken, 0)
+        }
     }
 }
