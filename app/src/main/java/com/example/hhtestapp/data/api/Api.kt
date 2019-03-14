@@ -7,7 +7,7 @@ import retrofit2.http.GET
 interface Api {
 
     companion object {
-        const val PARIS = "current.json?key=871051d325b5431b8e181249191403&q=Paris"
+        const val PARIS = "current.json?key=871051d325b5431b8e181249191403&q=Moscow"
     }
 
     @GET(PARIS)

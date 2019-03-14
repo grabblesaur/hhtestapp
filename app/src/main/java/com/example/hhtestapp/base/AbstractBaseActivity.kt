@@ -72,7 +72,7 @@ abstract class AbstractBaseActivity<in V : BaseView, P : BasePresenter<V>> : App
     }
 
     fun setToolbarWithBackButton(toolbar: Toolbar) {
-        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_black_24_px)
+        toolbar.setNavigationIcon(R.drawable.ic_arrow_back_24dp)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)

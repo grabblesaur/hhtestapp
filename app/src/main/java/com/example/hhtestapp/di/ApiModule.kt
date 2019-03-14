@@ -25,7 +25,6 @@ class ApiModule {
         private const val WRITE_TIMEOUT = 20L
 
         const val DEFAULT_API_HOST = "https://api.apixu.com/v1/"
-        // https://api.apixu.com/v1/current.json?key=871051d325b5431b8e181249191403&q=Paris
         const val API_KEY = "871051d325b5431b8e181249191403"
     }
 
